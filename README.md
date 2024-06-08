@@ -10,12 +10,14 @@ familair with different poker math stuff
 ##to come:
 * Range vs Range calc
 * hand vs range calc
+** Which hands from their range i bet, which I loose to
 * implied odds
 * EV calc
 * ?
 
 ### tourny specific to come
 * shove/fold calc: determines if shove or fold based on BBs and position
+* ICM
 * ?
 
 ##This python app requires the following:
