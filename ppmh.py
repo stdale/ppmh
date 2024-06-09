@@ -5,41 +5,22 @@ from PyQt6.QtWidgets import *
 from PyQt6 import QtCore, QtGui
 from PyQt6.QtGui import *
 from PyQt6.QtCore import *
-from enum import Enum
 
-class Cards(Enum):
-    Card_A=0
-    Card_2=1
-    Card_3=2
-    Card_4=3
-    Card_5=4
-    Card_6=5
-    Card_7=6
-    Card_8=7
-    Card_9=8
-    Card_T=9
-    Card_J=10
-    Card_Q=11
-    Card_K=12
 
-class Suits(Enum):
-    Spades = 0
-    Hearts = 1
-    Diamonds = 2
-    Clubs = 3
+#import our crap
+import PokerHandRanges as phr
+import PokerDataTypes as  pdt
 
-class Card():
-    def __init__(self,card, suit):
-        self.card = card
-        self.suit = suit
+PROG_VERSION = "v0.0.2"
 
-    def getCard():
-        return [self.card, self.suit]
+def printVersion(name):
+    print(name + PROG_VERSION)
 
-class Hand():
-    def __init__(self,cardA, cardB):
-        self.cardA=cardA
-        self.cardB=cardB
+def printHelp(name):
+    print(name + "-v | -h")
+    print("-v: print version when starting the program")
+    print("-h: show this message and exit()")
+    exit(-1)
 
 def minGtdOverlay(entryToPool, gtd):
     return round(gtd/entryToPool)
@@ -124,6 +105,12 @@ class Window(QWidget):
             label_to.setText(needed + " Entries")
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "-v":
+            printVersion(sys.argv[0])
+        else:
+            printHelp(sys.argv[0])
+
     App = QApplication(sys.argv)
 
     window = Window()

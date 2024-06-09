@@ -1,3 +1,5 @@
+from enum import Enum
+
 class Cards(Enum):
     Card_A=0
     Card_2=1
